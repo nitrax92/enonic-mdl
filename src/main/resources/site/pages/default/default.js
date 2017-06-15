@@ -18,7 +18,15 @@ exports.get = function (req) {
         model.pageTitle = site.page.config['title'] || 'Default Title';
         model.bgImg = site.page.config['background-image'];
         model.colorScheme = site.page.config['color_scheme'] || 'indigo-pink';
+
+        //Header
+        model.fixedDrawerBoolean = site.page.config['fixed_drawer'];
+
+        // Footer
         model.footerBoolean = site.page.config['layout_footer'];
+        model.footerTitle = site.page.config['footer_title'];
+
+
         return model;
     }
 
