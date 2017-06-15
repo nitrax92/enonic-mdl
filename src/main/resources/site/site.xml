@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-  <config/>
+  <config>
+    <input type="ImageSelector" name="background-image">
+      <label>Background Image</label>
+      <occurrences minimum="0" maximum="1"/>
+      <config></config>
+    </input>
+  </config>
 </site>

@@ -1,0 +1,61 @@
+<page>
+    <display-name>Default</display-name>
+    <config>
+        <field-set name="Selector">
+            <label>Site Properties</label>
+            <items>
+                <input type="TextLine" name="title">
+                    <label>Title</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+                <input type="ComboBox" name="color_scheme">
+                    <label>Color Configuration</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <config>
+                        <option value="purple-indigo">Primary: Purple, Accent: Indigo </option>
+                        <option value="indigo-deep_purple">Primary: Indigo, Accent: Deep Purple</option>
+                        <option value="green-light_green">Primary: Green, Accent: Light Green</option>
+                        <option value="blue_grey-red">Primary: Blue, Accent: Grey-Red</option>
+                        <option value="cyan-blue">Primary: Cyan, Accent: Blue</option>
+                        <option value="red-blue">Primary: Red, Accent: Blue</option>
+                    </config>
+                    <default>purple-indigo</default>
+                </input>
+
+                <input type="ComboBox" name="layout_header">
+                    <label>Pick Header Type</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <config>
+                        <option value="default">Default</option>
+                    </config>
+                    <default>default</default>
+                </input>
+
+                <input type="CheckBox" name="layout_footer">
+                    <label>Footer</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <default>checked</default>
+                    <config>
+                        <alignment>right</alignment>
+                    </config>
+                </input>
+
+                <input type="TextLine" name="footer_title">
+                    <label>Footer Title</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+
+                <input type="ImageSelector" name="background-image">
+                    <label>Background Image</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <config></config>
+                </input>
+
+
+            </items>
+        </field-set>
+    </config>
+    <regions>
+        <region name="mdl-content"/>
+    </regions>
+</page>

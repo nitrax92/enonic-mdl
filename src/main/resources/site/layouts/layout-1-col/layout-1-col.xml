@@ -1,0 +1,7 @@
+<layout>
+    <display-name>Desktop, Tablet, Phone: 100</display-name>
+    <config/>
+    <regions>
+        <region name="1"/>
+    </regions>
+</layout>

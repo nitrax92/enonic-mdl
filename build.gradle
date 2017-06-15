@@ -38,6 +38,8 @@ dependencies {
     //include "com.enonic.xp:lib-mail:${xpVersion}"
     //include "com.enonic.xp:lib-repo:${xpVersion}"
     //include "com.enonic.xp:lib-websocket:${xpVersion}"
+
+    webjar "org.webjars.npm:material-design-lite:1.3.0"
 }
 
 repositories {
