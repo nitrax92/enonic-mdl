@@ -20,7 +20,9 @@ exports.get = function (req) {
         model.colorScheme = site.page.config['color_scheme'] || 'indigo-pink';
 
         //Header
+        model.fixedHeaderBoolean = site.page.config['fixed_header'];
         model.fixedDrawerBoolean = site.page.config['fixed_drawer'];
+        model.drawerBoolean = site.page.config['drawer'];
 
         // Footer
         model.footerBoolean = site.page.config['layout_footer'];

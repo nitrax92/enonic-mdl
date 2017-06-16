@@ -2,7 +2,7 @@
     <display-name>Default</display-name>
     <config>
         <field-set name="Selector">
-            <label>Site Properties</label>
+            <label>Page Properties</label>
             <items>
                 <input type="TextLine" name="title">
                     <label>Title</label>
@@ -11,6 +11,7 @@
                 <input type="ComboBox" name="color_scheme">
                     <label>Color Configuration</label>
                     <occurrences minimum="0" maximum="1"/>
+                    <help-text>It is possible to override these colors using CSS</help-text>
                     <config>
                         <option value="purple-indigo">Primary: Purple, Accent: Indigo </option>
                         <option value="indigo-deep_purple">Primary: Indigo, Accent: Deep Purple</option>
@@ -22,13 +23,31 @@
                     <default>purple-indigo</default>
                 </input>
 
-                <input type="ComboBox" name="layout_header">
-                    <label>Pick Header Type</label>
+                <input type="CheckBox" name="fixed_header">
+                    <label>Fixed Header (All screen sizes)</label>
                     <occurrences minimum="0" maximum="1"/>
+                    <default>checked</default>
                     <config>
-                        <option value="default">Default</option>
+                        <alignment>left</alignment>
                     </config>
-                    <default>default</default>
+                </input>
+
+                <input type="CheckBox" name="fixed_drawer">
+                    <label>Fixed Drawer (On bigger screens)</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <default>checked</default>
+                    <config>
+                        <alignment>left</alignment>
+                    </config>
+                </input>
+
+                <input type="CheckBox" name="drawer">
+                    <label>Drawer</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <default>checked</default>
+                    <config>
+                        <alignment>left</alignment>
+                    </config>
                 </input>
 
                 <input type="CheckBox" name="layout_footer">
@@ -36,7 +55,7 @@
                     <occurrences minimum="0" maximum="1"/>
                     <default>checked</default>
                     <config>
-                        <alignment>right</alignment>
+                        <alignment>left</alignment>
                     </config>
                 </input>
 
