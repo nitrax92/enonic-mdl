@@ -10,11 +10,12 @@ exports.get = function(req) {
     var component = portal.getComponent();
 
     // Resolve the view
-    var view = resolve('./layout-1-col.html');
+    var view = resolve('./layout-2-col.html');
 
     // Define the model
     var model = {
         region1: component.regions["1"],
+        region2: component.regions["2"],
 
         spacingBoolean: component.config['no_spacing']
     };

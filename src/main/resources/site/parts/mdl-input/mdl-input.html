@@ -1,0 +1,54 @@
+<!-- Simple Textfield -->
+<style>
+    .inputs {
+        padding: 10px;
+        overflow: visible;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .mdl-textfield {
+        width: 95%;
+    }
+    .submit_button {
+        position: absolute;
+        bottom: -30px;
+        right: 30px;
+        overflow: auto;
+    }
+</style>
+
+<div class="inputs mdl-color--grey-300 mdl-shadow--8dp">
+    <div class="mdl-textfield mdl-js-textfield">
+        <label class="mdl-textfield__label" for="sample1">Text...</label>
+        <input class="mdl-textfield__input" type="text" id="sample1" name="sample1" th:value="*{sample1}" />
+    </div>
+
+
+    <div class="mdl-textfield mdl-js-textfield">
+        <label class="mdl-textfield__label" for="sample2">Number...</label>
+        <input class="mdl-textfield__input" type="text" id="sample2" name="sample2" pattern="-?[0-9]*(\.[0-9]+)?"   th:value="*{sample2}" />
+        <span class="mdl-textfield__error">Input is not a number!</span>
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <label class="mdl-textfield__label" for="sample3">Text...</label>
+        <input class="mdl-textfield__input" type="text" id="sample3" name="sample3" th:value="*{sample3}"/>
+    </div>
+
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4" name="sample4" th:value="*{sample4}"/>
+        <label class="mdl-textfield__label" for="sample4">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+    </div>
+
+    <button class="submit_button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+        <i class="material-icons">add</i>
+    </button>
+</div>

@@ -1,11 +1,11 @@
 <layout>
-    <display-name>Desktop, Tablet, Phone: 100</display-name>
+    <display-name>Desktop: 75/25 | Tablet, Phone 100</display-name>
     <config>
-        <field-set name="Selector">
-            <label>Layout Properties</label>
-            <items>
+    <field-set name="Selector">
+                <label>Layout Properties</label>
+                <items>
                 <input type="CheckBox" name="no_spacing">
-                    <label>Remove Spacing.</label>
+                    <label>Layout Spacing. Check to remove any spacing.</label>
                     <occurrences minimum="0" maximum="1"/>
                     <default></default>
                     <config>
@@ -17,5 +17,6 @@
     </config>
     <regions>
         <region name="1"/>
+        <region name="2"/>
     </regions>
 </layout>

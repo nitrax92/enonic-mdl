@@ -1,0 +1,30 @@
+<div class="info-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title" th:if="${image_id}" th:style="'background-image:url(' + ${portal.imageUrl({'_id=' + image_id, '_scale=block(500, 300)', '_format=jpeg', '_quality=85'})} + ');'">
+        <h2 class="mdl-card__title-text"  th:text="${info_title}"></h2>
+    </div>
+
+
+    <div class="mdl-card__title" th:unless="${image_id}">
+        <h2 class="mdl-card__title-text" th:text="${info_title}" ></h2>
+    </div>
+
+
+
+
+    <div class="mdl-card__supporting-text" th:text="${info_content}">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Mauris sagittis pellentesque lacus eleifend lacinia..
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Read Article
+        </a>
+    </div>
+
+    <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">more_vert</i>
+        </button>
+    </div>
+</div>
+

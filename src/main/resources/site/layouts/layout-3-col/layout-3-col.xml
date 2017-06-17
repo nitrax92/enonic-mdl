@@ -1,5 +1,5 @@
 <layout>
-    <display-name>Desktop, Tablet, Phone: 100</display-name>
+    <display-name>Desktop, Tablet: 33/33/33 | Phone 100</display-name>
     <config>
         <field-set name="Selector">
             <label>Layout Properties</label>
@@ -17,5 +17,7 @@
     </config>
     <regions>
         <region name="1"/>
+        <region name="2"/>
+        <region name="3"/>
     </regions>
 </layout>

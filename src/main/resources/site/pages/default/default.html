@@ -17,6 +17,12 @@
 
     <!-- Main general style-->
     <link data-th-href="${portal.assetUrl({'_path=css/mdlMiscStyle.css'})}" href="../assets/css/mdlMiscStyle.css" rel="stylesheet"/>
+
+
+    <!-- PARTS -->
+
+    <!-- Info Cards -->
+    <link data-th-href="${portal.assetUrl({'_path=parts/info_card/info_card_style.css'})}" href="../assets/parts/info_card/info_card_style.css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -36,11 +42,23 @@
         </div>
     </header>
 
-    <div data-th-if="${drawerBoolean}" class="mdl-layout__drawer">
-        <span class="mdl-layout-title" data-th-text="${pageTitle}">Title</span>
-        <nav class="mdl-navigation">
+    <div data-th-if="${drawerBoolean}" class="mdl-layout__drawer mdl-shadow--8dp" style="border: 0px;">
+        <span class="mdl-layout-title mdl-color--blue-grey-900 mdl-color-text--blue-grey-50" data-th-text="${pageTitle}">Title</span>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800 mdl-color-text--blue-grey-400">
             <!-- Navigation TODO: Check for menu items, link appropriately. -->
-            <a class="mdl-navigation__link" href="">Link</a>
+
+            <!-- Copy/Paste MDL Templates -->
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Spam</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forums</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Updates</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Promos</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Purchases</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
+            <div class="mdl-layout-spacer"></div>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
     </div>
 

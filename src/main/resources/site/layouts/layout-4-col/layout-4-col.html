@@ -1,0 +1,22 @@
+<div class="mdl-grid" data-th-classappend="${spacingBoolean} ? mdl-grid--no-spacing : ''">
+    <div data-portal-region="1" class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet">
+        <div data-th-each="component : ${region1.components}" data-th-remove="tag">
+            <div data-portal-component="${component.path}" data-th-remove="tag" />
+        </div>
+    </div>
+    <div data-portal-region="2" class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet">
+        <div data-th-each="component : ${region2.components}" data-th-remove="tag">
+            <div data-portal-component="${component.path}" data-th-remove="tag" />
+        </div>
+    </div>
+    <div data-portal-region="3" class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet">
+        <div data-th-each="component : ${region3.components}" data-th-remove="tag">
+            <div data-portal-component="${component.path}" data-th-remove="tag" />
+        </div>
+    </div>
+    <div data-portal-region="4" class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet">
+        <div data-th-each="component : ${region4.components}" data-th-remove="tag">
+            <div data-portal-component="${component.path}" data-th-remove="tag" />
+        </div>
+    </div>
+</div>
