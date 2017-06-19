@@ -19,6 +19,7 @@
                         <option value="blue_grey-red">Primary: Blue, Accent: Grey-Red</option>
                         <option value="cyan-blue">Primary: Cyan, Accent: Blue</option>
                         <option value="red-blue">Primary: Red, Accent: Blue</option>
+                        <option value="blue_grey-red">Primary: Blue Grey, Accent: Red</option>
                     </config>
                     <default>purple-indigo</default>
                 </input>

@@ -16,7 +16,6 @@ exports.get = function(portal) {
     // Return the result
     return {
         body: body,
-        contentType: 'text/html'
     };
 
 };

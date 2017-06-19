@@ -1,0 +1,23 @@
+<layout>
+    <display-name>Desktop:24/52/24 | Tablet, Phone 100</display-name>
+    <config>
+    <field-set name="Selector">
+                <label>Layout Properties</label>
+                <items>
+                <input type="CheckBox" name="no_spacing">
+                    <label>Layout Spacing. Check to remove any spacing.</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <default></default>
+                    <config>
+                        <alignment>left</alignment>
+                    </config>
+                </input>
+            </items>
+        </field-set>
+    </config>
+    <regions>
+        <region name="1"/>
+        <region name="2"/>
+        <region name="3"/>
+    </regions>
+</layout>
