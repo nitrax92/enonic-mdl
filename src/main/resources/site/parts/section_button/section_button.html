@@ -1,0 +1,20 @@
+<div>
+    <style th:inline="css">
+        #[[${obj_id}]] .section_button {
+            background-color: #[[${bg_color}]];
+            background-image: url([[${bg_img}]]);
+
+        }
+
+        #[[${obj_id}]] .section_button:hover{
+            background-image: url([[${bg_img_hover}]]);
+        }
+    </style>
+
+    <div class="mdl-grid section_button" th:id="${obj_id}">
+        <a href="#" class="section_content">
+            <h3 class="section_headline" data-th-text="${text}">Cool information</h3>
+        </a>
+    </div>
+
+</div>

@@ -1,0 +1,38 @@
+<part>
+    <display-name>Info</display-name>
+    <config>
+        <field-set name="info_card">
+            <label>Things</label>
+            <items>
+                <input type="TextLine" name="text">
+                    <label>Title</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input name="bg_img" type="ImageSelector">
+                    <label>Background Image</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <config>
+                        <allowPath>./*</allowPath>
+                    </config>
+                </input>
+
+                <input name="bg_img_hover" type="ImageSelector">
+                    <label>Background Image Hover</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <config>
+                        <allowPath>./*</allowPath>
+                    </config>
+                </input>
+
+                <input name="bg_color_code" type="TextLine">
+                    <label>Background Color Code</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <config>
+                        <regexp>([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})</regexp>
+                    </config>
+                    <default>8F4099</default>
+                </input>
+            </items>
+        </field-set>
+    </config>
+</part>
