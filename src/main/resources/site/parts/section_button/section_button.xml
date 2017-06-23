@@ -8,6 +8,17 @@
                     <label>Title</label>
                     <occurrences minimum="1" maximum="1"/>
                 </input>
+                <input type="TextLine" name="object_id">
+                    <label>Part ID. Must be unique</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+
+                <input type="TextLine" name="height">
+                    <label>Max Height. Must be allowed in CSS (px, % etc.)</label>
+                    <occurrences minimum="1" maximum="1"/>
+                    <default>500</default>
+                </input>
+
                 <input name="bg_img" type="ImageSelector">
                     <label>Background Image</label>
                     <occurrences minimum="0" maximum="1"/>

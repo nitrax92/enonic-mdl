@@ -1,45 +1,24 @@
 var libs = {
     thymeleaf: require('/lib/xp/thymeleaf'),
-    portal: require('/lib/xp/portal')
+    portal: require('/lib/xp/portal'),
+    util: require('/lib/enonic/util')
 };
 
-
-exports.get = function(portal) {
+exports.get = function(req) {
     // Resolve the view
     var view = resolve('section_button.html');
-
     // Find the current component from request
     var component = libs.portal.getComponent();
-
-    // Find a config variable for the component
-    var info = component.config; //['info'] || [];
-
-    var text = info['text'] || "No Text";
+    // Collect the config
+    var config = component.config;
+    var model = createModel();
 
 
-    // Define the model
-    var bg_img = libs.portal.imageUrl({
-        id: info['bg_img'],
-        scale: 'block(200,200)'
-
-    });
-
-    var bg_img_hover = libs.portal.imageUrl({
-        id: info['bg_img_hover'],
-        scale: 'width(300)'
-
-    });
-
-    var model = {
-        obj_id: text,
-        text: text,
-        bg_img: bg_img,
-        bg_img_hover: bg_img_hover,
-        bg_color: info['bg_color_code']
-    };
+    log.info(req.mode);
 
     // Render a thymeleaf template
     var body = libs.thymeleaf.render(view, model);
+
 
     // Return the result
     return {
@@ -49,5 +28,37 @@ exports.get = function(portal) {
             "headEnd": "<link rel=" + "stylesheet" + " " +  "href=" + "'" + libs.portal.assetUrl({path: 'parts/section_button/section_button.css'}) + "'" + "/>"
         }
     };
+
+
+    function createModel() {
+        var model = {};
+        //Headline Text
+        model.text =  config.text;
+
+        model.height = config.height;
+
+        //Color Configurations
+        model.bg_color = config.bg_color_code;
+        //Font Color
+        //TODO: Add Font Color config
+        //This specific object ID
+        model.obj_id = config.object_id; //TODO: Find something to replace this 'logic'.
+
+        // Images
+        model.bg_img = getImgUrl(config.bg_img);
+        model.bg_img_hover = getImgUrl(config.bg_img_hover);
+
+        return model
+    }
+
+
+
+    function getImgUrl(img_id) {
+        var url = libs.portal.imageUrl({
+            id: img_id,
+            scale: 'square(250)'
+        });
+        return url
+    }
 
 };
