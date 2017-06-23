@@ -1,12 +1,12 @@
 <div>
     <style th:inline="css">
         #[[${obj_id}]].section_button {
+            width: ${#strings.escapeXml(height)};
             height:[[${height}]]px;
             background-color: #[[${bg_color}]];
             background-image: url([[${bg_img}]]);
 
         }
-
         #[[${obj_id}]].section_button:hover{
             background-image: url([[${bg_img_hover}]]);
         }

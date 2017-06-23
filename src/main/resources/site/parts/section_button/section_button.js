@@ -15,8 +15,6 @@ exports.get = function(req) {
 
     // Render a thymeleaf template
     var body = libs.thymeleaf.render(view, model);
-
-    libs.util.log(req);
     // Return the result
     return {
         body: body,
@@ -33,16 +31,11 @@ exports.get = function(req) {
         var model = {};
         //Headline Text
         model.text =  config.text;
-
         model.height = config.height;
 
         //Color Configurations
         model.bg_color = config.bg_color_code;
-        //Font Color
-        //TODO: Add Font Color config
-        //This specific object ID
         //var id = config.text.replace(" ", "_").toLowerCase();
-        //log.info(id);
         model.obj_id = config.text.replace(" ", "_").toLowerCase(); //TODO: Find something to replace this 'logic'.
 
         // Images
