@@ -4,7 +4,7 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-    height: 500px;
+    max-height: 500px;
     background-repeat: no-repeat;
     background-position: center center;
 }

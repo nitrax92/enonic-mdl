@@ -13,13 +13,10 @@ exports.get = function(req) {
     var config = component.config;
     var model = createModel();
 
-
-    log.info(req.mode);
-
     // Render a thymeleaf template
     var body = libs.thymeleaf.render(view, model);
 
-
+    libs.util.log(req);
     // Return the result
     return {
         body: body,
@@ -30,6 +27,8 @@ exports.get = function(req) {
     };
 
 
+
+    // Get objects from the database and place in the model.
     function createModel() {
         var model = {};
         //Headline Text
@@ -42,7 +41,9 @@ exports.get = function(req) {
         //Font Color
         //TODO: Add Font Color config
         //This specific object ID
-        model.obj_id = config.object_id; //TODO: Find something to replace this 'logic'.
+        //var id = config.text.replace(" ", "_").toLowerCase();
+        //log.info(id);
+        model.obj_id = config.text.replace(" ", "_").toLowerCase(); //TODO: Find something to replace this 'logic'.
 
         // Images
         model.bg_img = getImgUrl(config.bg_img);
@@ -51,8 +52,7 @@ exports.get = function(req) {
         return model
     }
 
-
-
+    // Function to get url based on the image ID.
     function getImgUrl(img_id) {
         var url = libs.portal.imageUrl({
             id: img_id,
@@ -60,5 +60,4 @@ exports.get = function(req) {
         });
         return url
     }
-
 };
