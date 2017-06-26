@@ -43,8 +43,9 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title" data-th-text="${pageTitle}">Title</span>
-
+            <a class="title_link" href="" data-th-href="${portal.pageUrl({'_path=/site1'})}">
+                <span class="mdl-layout-title" data-th-text="${pageTitle}">Title</span>
+            </a>
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation TODO: Check for menu items, link appropriately. -->
             <nav class="mdl-navigation">

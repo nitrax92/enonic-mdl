@@ -1,7 +1,8 @@
 var libs = {
     portal: require('/lib/xp/portal'),
     thymeleaf: require('/lib/xp/thymeleaf'),
-    content: require('/lib/xp/content')
+    content: require('/lib/xp/content'),
+    util: require('/lib/enonic/util')
 };
 
 // Handle GET request
@@ -10,6 +11,8 @@ exports.get = handleGet;
 function handleGet(req) {
     var view = resolve('article-cards.html'); // The view to render
     var model = createModel(); // The model to send to the view
+
+
 
     function createModel() {
         var model = {};

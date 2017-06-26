@@ -6,6 +6,10 @@
     flex: 0 0 auto;
 }
 
+.title_link {
+    text-decoration : none;
+    color : #ffffff;
+}
 
 
 /* NAV Drawer */

@@ -1,0 +1,36 @@
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="post-content mdl-color--grey-300 mdl-shadow--4dp content mdl-color-text--black mdl-cell mdl-cell--8-col mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col title">
+            <h2 data-th-text="${title}"></h2>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <img class="post-img img-responsive" src="" data-th-src="${imgUrl}" alt="agriculture" align="left">
+        </div>
+        <div class="mdl-cell mdl-cell--12-col" data-th-utext="${bodyText}" data-th-if="${bodyText}">
+        </div>
+        <div class="mdl-cell mdl-cell--10-col">
+
+            <p th:inline="text" >Author:[[${title}]]<br>Date: [[${date}]]</p>
+        </div>
+
+        <div class="mdl-cell mdl-cell--2-col mdl-grid">
+            <!--
+            <div class="mdl-cell mdl-cell--12-col-desktop">
+                <a href="/downvote/">
+                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                        <i class="material-icons">thumb_down</i>
+                    </button>
+                </a>
+                <a href="/upvote/">
+                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                        <i class="material-icons">thumb_up</i>
+                    </button>
+                </a>
+            </div>
+            -->
+        </div>
+        <div class="mdl-cell mdl-cell--12-col new_section">
+        </div>
+    </div>
+</div>
