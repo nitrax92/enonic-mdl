@@ -4,7 +4,7 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-    max-height: 500px;
+    height: 500px;
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -35,4 +35,17 @@
 
 .section_headline {
     margin-top: auto;
+}
+
+
+.large_section {
+    height: 500px;
+}
+
+.medium_section {
+    height: 400px;
+}
+
+.small_section {
+    height: 250px;
 }

@@ -1,0 +1,25 @@
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h2>Articles</h2>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col" data-th-each="article : ${articles}" >
+        <div  class="info-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title" th:style="'background-image:url(' + ${portal.imageUrl({'_id=' + article.data.image, '_scale=block(500, 300)', '_format=jpeg', '_quality=85'})} + ');'">
+                <h2 class="mdl-card__title-text"  data-th-text="${article.data.title}"></h2>
+            </div>
+
+
+            <div class="mdl-card__supporting-text" data-th-text="${article.data.preface}">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Mauris sagittis pellentesque lacus eleifend lacinia..
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a href="" data-th-href="${portal.pageUrl({'_id=' + article._id})}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Read Article
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>

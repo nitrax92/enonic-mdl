@@ -13,10 +13,16 @@
                     <occurrences minimum="1" maximum="1"/>
                 </input>
 
-                <input type="TextLine" name="height">
-                    <label>Max Height. Must be allowed in CSS (px, % etc.)</label>
-                    <occurrences minimum="1" maximum="1"/>
-                    <default>500</default>
+
+                <input type="ComboBox" name="section_height">
+                    <label>Section Height</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <config>
+                        <option value="large_section">Large Section (500px) </option>
+                        <option value="medium_section">Medium Section (400px)</option>
+                        <option value="small_section">Small Section (250px)</option>
+                    </config>
+                    <default>medium_section</default>
                 </input>
 
                 <input name="bg_img" type="ImageSelector">

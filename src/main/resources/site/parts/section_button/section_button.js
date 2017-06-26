@@ -31,7 +31,7 @@ exports.get = function(req) {
         var model = {};
         //Headline Text
         model.text =  config.text;
-        model.height = config.height;
+        model.height = config.section_height;
 
         //Color Configurations
         model.bg_color = config.bg_color_code;
