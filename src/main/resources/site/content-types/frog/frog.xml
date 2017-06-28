@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content-type>
+    <display-name>Frog Species</display-name>
+    <content-display-name-script>$('species')</content-display-name-script>
+    <super-type>base:structured</super-type>
+    <form>
+        <field-set name="frog-info">
+            <label>Frog</label>
+            <items>
+                <input type="TextLine" name="species">
+                    <label>Species</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input type="TextArea" name="description">
+                    <label>Short Description</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input type="HtmlArea" name="bodyText">
+                    <label>About this frog.</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+                <input type="ImageSelector" name="image">
+                    <label>Frog Image</label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <config></config>
+                </input>
+            </items>
+        </field-set>
+    </form>
+</content-type>

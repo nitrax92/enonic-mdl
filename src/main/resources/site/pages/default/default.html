@@ -26,11 +26,8 @@
 
     <!-- Info Cards -->
     <link data-th-href="${portal.assetUrl({'_path=parts/info_card/info_card_style.css'})}" href="../assets/parts/info_card/info_card_style.css" rel="stylesheet"/>
-
-
     <!-- AJAX requirements -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <!-- MDL Form -->
     <script data-th-src="${portal.assetUrl({'_path=/parts/mdl-form/mdl-formScript.js'})}"></script>
 
@@ -48,7 +45,9 @@
             </a>
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation TODO: Check for menu items, link appropriately. -->
+
             <nav class="mdl-navigation">
+
                 <a class="mdl-navigation__link">Link</a>
             </nav>
         </div>
@@ -74,35 +73,30 @@
         </nav>
     </div>
 
-    <main class="mdl-layout__content"
-          data-th-style="
-              'background-image:url(' + ${portal.imageUrl({'_id=' + bgImg, '_scale=block(1920, 1080)', '_format=jpeg', '_quality=100'})} + ');
-               background-position: center;
-               background-repeat: no-repeat;
-               background-size: cover;'
-            ">
+    <main class="mdl-layout__content" data-th-style="${bgImg}">
         <div data-portal-region="mdl-content" class="mdl-content">
             <div data-th-if="${contentRegion}" data-th-each="component : ${contentRegion.components}" data-th-remove="tag">
                 <div data-portal-component="${component.path}" data-th-remove="tag"></div>
             </div>
         </div>
+        <footer data-th-if="${footerBoolean}" class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo" data-th-text="${footerTitle}">
+                    Mini-footer Heading
+                </div>
+            </div>
+
+            <div class="mdl-mini-footer__right-section">
+                <ul class="mdl-mini-footer__link-list">
+                    <li><a href="">Help</a></li>
+                    <li><a href="">Privacy & Terms</a></li>
+                </ul>
+            </div>
+        </footer>
     </main>
 
 
-    <footer data-th-if="${footerBoolean}" class="mdl-mini-footer">
-        <div class="mdl-mini-footer__left-section">
-            <div class="mdl-logo" data-th-text="${footerTitle}">
-                Mini-footer Heading
-            </div>
-        </div>
 
-        <div class="mdl-mini-footer__right-section">
-            <ul class="mdl-mini-footer__link-list">
-                <li><a href="">Help</a></li>
-                <li><a href="">Privacy & Terms</a></li>
-            </ul>
-        </div>
-    </footer>
 
 
 

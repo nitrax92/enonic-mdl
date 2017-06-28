@@ -3,6 +3,7 @@
  */
 var thymeleaf = require('/lib/xp/thymeleaf'); // Import the thymeleaf render function
 var portal = require('/lib/xp/portal');
+var utils = require('/lib/enonic/util');
 
 // Handle GET requests
 exports.get = function(req) {
@@ -29,11 +30,11 @@ exports.get = function(req) {
 
 exports.post = function (req) {
     log.info("MDL FORM------------- POST REQUEST");
-    log.info("%s", req);
+    utils.log(req);
     // Return the result
     return {
         body: {
-           message: "Hei"
+           message: req.params.input
         },
         contentType: 'application/json'
     };

@@ -12,4 +12,5 @@
 
 
   </config>
+  <x-data mixin="menu-item" />
 </site>

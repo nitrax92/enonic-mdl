@@ -1,3 +1,5 @@
+/* Places the footer on the bottom. But ruins the background image placement. */
+/*
 .mdl-layout__content {
     flex: 1 0 auto;
 }
@@ -5,12 +7,17 @@
 .mdl-mini-footer {
     flex: 0 0 auto;
 }
-
+*/
 .title_link {
     text-decoration : none;
     color : #ffffff;
 }
 
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 /* NAV Drawer */
 

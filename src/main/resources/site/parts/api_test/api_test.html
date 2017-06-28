@@ -1,0 +1,88 @@
+<div>
+    <!-- Event card -->
+    <style>
+
+        .demo-card-event > .mdl-card__actions {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .demo-card-event > .mdl-card__title {
+            align-items: flex-start;
+        }
+        .demo-card-event > .mdl-card__title > h4 {
+            margin-top: 0;
+        }
+        .demo-card-event > .mdl-card__actions {
+            display: flex;
+            box-sizing:border-box;
+            align-items: center;
+        }
+        .demo-card-event > .mdl-card__actions > .material-icons {
+            padding-right: 10px;
+        }
+        .demo-card-event > .mdl-card__title,
+        .demo-card-event > .mdl-card__actions,
+        .demo-card-event > .mdl-card__actions > .mdl-button {
+            color: #fff;
+        }
+
+        .mdl-textfield {
+            width: 100%;
+        }
+    </style>
+
+    <div class="demo-card-event mdl-card mdl-shadow--2dp mdl-color--blue">
+        <div class="mdl-card__title mdl-card--expand mdl-grid">
+                <h4>Type in any API URL</h4>
+            <form class="mdl-cell mdl-cell--12-col" method="post" id="url_form" action="${componentUrl}">
+                <div class="mdl-textfield mdl-js-textfield">
+                    <label class="mdl-textfield__label" for="api_url">URL</label>
+                    <input class="mdl-textfield__input" type="text" id="api_url" name="api_url" th:value="*{api_url}" />
+                </div>
+
+                <button type="submit" class="mdl-button url_submit mdl-js-button mdl-button--raised mdl-button--colored">
+                    Button
+                </button>
+            </form>
+            <div class="mdl-cell mdl-cell--12-col">
+                <h4>
+                    External API Result<br>
+                    <div></div>
+                    <div data-th-if="${result}" data-th-text="${result}" id="api_result"></div>
+                </h4>
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+        </div>
+    </div>
+    <script data-th-inline="javascript">
+        /*<![CDATA[*/
+        $(".url_submit").click(function (event) {
+            //Stop the default POST method.
+            event.preventDefault();
+            var componentUrl = [[${componentUrl}]];
+            var data = $('#url_form').serialize();
+
+            $.ajax({
+                method: "post",
+                url: componentUrl,
+                data: data,
+                success: function (req) {
+
+                    if(req.result.success){
+                        $('#api_result').html(JSON.stringify(req.result));
+                    }
+                    else{
+                        $('#api_result').html("No Results")
+                    }
+
+                    //alert("Ajax Success!!!")
+                },
+                error: function (result) {
+                  alert("API PART Ajax Error.")
+                }
+            })
+        })
+        /*]]>*/
+    </script>
+
+</div>

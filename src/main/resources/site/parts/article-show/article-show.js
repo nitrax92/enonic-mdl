@@ -14,6 +14,7 @@ function handleGet(req) {
     var view = resolve('article-show.html'); // The view to render
     var model = createModel(); // The model to send to the view
 
+
     function createModel() {
         var model = {};
 

@@ -1,56 +1,62 @@
+<div>
+    <style>
+        .mdl-form {
+            padding: 10px;
+            overflow: visible;
+            position: relative;
+            padding-bottom: 15px;
+        }
 
-<style>
-    .mdl-form {
-        padding: 10px;
-        overflow: visible;
-        position: relative;
-        padding-bottom: 15px;
-    }
+        .mdl-textfield {
+            width: 95%;
+        }
+        .submit_button {
+            position: absolute;
+            bottom: -30px;
+            right: 30px;
+            overflow: auto;
+        }
 
-    .mdl-textfield {
-        width: 95%;
-    }
-    .submit_button {
-        position: absolute;
-        bottom: -30px;
-        right: 30px;
-        overflow: auto;
-    }
+        .mdl-form {
+            height: 100%;
+        }
+    </style>
 
-    .mdl-form {
-        height: 100%;
-    }
-</style>
+    <form method='post' th:action="${componentUrl}" class="mdl-color--grey-300 mdl-shadow--8dp mdl-form">
+        <div id="Result">dwad</div>
+        <div class="mdl-textfield mdl-js-textfield">
+            <label class="mdl-textfield__label" for="sample1" id="sample1_label">Text...</label>
+            <input class="mdl-textfield__input" type="text" id="sample1" name="sample1" th:value="*{sample1}" />
+        </div>
 
-<div class="mdl-color--grey-300 mdl-shadow--8dp mdl-form">
-    <div id="Result">dwad</div>
-    <div class="mdl-textfield mdl-js-textfield">
-        <label class="mdl-textfield__label" for="sample1" id="sample1_label">Text...</label>
-        <input class="mdl-textfield__input" type="text" id="sample1" name="sample1" th:value="*{sample1}" />
-    </div>
+        <button class="submit_button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+            <i class="material-icons">add</i>
+        </button>
+    </form>
 
-    <button class="submit_button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-        <i class="material-icons">add</i>
-    </button>
+
+    <script data-th-inline="javascript">
+        /*<![CDATA[*/
+        $(".submit_button").click(function(event){
+            event.preventDefault();
+
+            var componentUrl = [[${componentUrl}]];
+
+            $.ajax({
+                method: "post",
+                url: componentUrl,
+                context: document.body,
+                data : {
+                    'input': $('#sample1').val(),
+                },
+                success: function(result){
+                    $("#Result").html(result.message);
+                },
+                error: function (result) {
+                    alert("Ajax Error.")
+                }});
+        });
+
+        /*]]>*/
+    </script>
 </div>
-
-
-<script data-th-inline="javascript">
-/*<![CDATA[*/
-    $(".submit_button").click(function(){
-        var my_message = [[${componentUrl}]];
-
-        $.ajax({
-            method: "post",
-            url: my_message,
-            context: $('#sample1'),
-            success: function(result){
-                $("#Result").html(result.my_data);
-            },
-            error: function (result) {
-                alert("Ajax Error.")
-            }});
-    });
-
-/*]]>*/
-</script>

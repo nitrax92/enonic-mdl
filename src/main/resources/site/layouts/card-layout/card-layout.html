@@ -1,0 +1,7 @@
+<div class="mdl-grid" data-th-classappend="${spacingBoolean} ? mdl-grid--no-spacing : ''">
+    <div data-portal-region="1" class="mdl-cell mdl-cell--2-offset mdl-cell--8-col">
+        <div data-th-each="component : ${region1.components}" data-th-remove="tag">
+            <div data-portal-component="${component.path}" data-th-remove="tag" />
+        </div>
+    </div>
+</div>

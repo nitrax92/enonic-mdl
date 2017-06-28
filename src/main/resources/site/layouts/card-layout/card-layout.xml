@@ -1,0 +1,8 @@
+<layout>
+    <display-name>Card Layout</display-name>
+    <config>
+    </config>
+    <regions>
+        <region name="1"/>
+    </regions>
+</layout>
